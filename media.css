@@ -6,6 +6,15 @@
     header {
         padding: 2rem;
     }
+
+    section {
+        padding: 2rem;
+
+    }
+
+    .home {
+        background-position: left;
+    }
 }
 
 @media (max-width:768px) {
@@ -23,7 +32,7 @@
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
 
-    header #toggler:checked ~ .navbar {
+    header #toggler:checked~.navbar {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
     }
@@ -35,10 +44,23 @@
         display: block;
         border: 0.2rem solid black;
     }
+
+    .home .contant h3 {
+        font-size: 5rem;
+
+    }
+
+    .home .contant span {
+        font-size: 2.5rem;
+
+    }
 }
 
 @media (max-width:450px) {
     html {
         font-size: 50%;
+    }
+    .heading{
+        font-size: 3rem;
     }
 }
