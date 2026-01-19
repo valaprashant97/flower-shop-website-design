@@ -1,12 +1,7 @@
 :root {
-    --primary: #2E7D32;      /* Forest Green */
-    --secondary: #6B8E23;    /* Olive Green */
-    --background: #FAF9F6;   /* Cream / Off White */
-    --button: #2E7D32;       /* Button Color */
-    --hover: #1B5E20;        /* Button Hover */
-    --text-dark: #333333;    /* Main Text */
-    --text-light: #FFFFFF;  /* White Text */
-    --border: #E0E0E0;       /* Card Border */
+    --background-color: #fff;
+    --pink: #e84393;
+    --shadow-color: rgba(0, 0, 0, .1);
 }
 
 * {
@@ -26,7 +21,7 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
     overflow-x: hidden;
-    background-color: var(--background);
+    background-color: var(--background-color);
 
 }
 
@@ -34,44 +29,52 @@ section {
     padding: 2rem 9%;
 }
 
+/* header css */
 header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background: var(--text-light);
+    background: var(--background-color);
     padding: 1rem 9%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
-    box-shadow: 0 0.5rem 1rem black;
+    box-shadow: 0 0.5rem 1rem var(--shadow-color);
 }
 
 header .logo {
+    display: flex;
+    align-items: center;
     font-size: 3rem;
-    color: var(--primary);
+    color: #333;
     font-weight: bolder;
+    gap: .5rem;
+}
+
+header .logo img {
+    height: 3rem;
 }
 
 header .logo span {
-    color: var(--secondary);
+    color: var(--pink);
 }
 
 header .navbar a {
     font-size: 2rem;
     padding: 0 1.5rem;
-    color: var(--text-dark);
+    color: #333;
 }
 
 header .navbar a:hover {
-    color: var(--button);
+    color: var(--pink);
 }
 
 header .icons a {
     font-size: 2.5rem;
     margin-left: 1.5rem;
-    color: var(--text-dark);
+    color: #333;
 }
 
 header .icons a:hover {
@@ -84,7 +87,7 @@ header #toggler {
 
 header .fa-bars {
     font-size: 3rem;
-    color: var(--primary);
+    color: var(--pink);
     border-radius: 0.5rem;
     padding: 0.5rem 0.5rem;
     cursor: pointer;
@@ -92,6 +95,7 @@ header .fa-bars {
     display: none;
 }
 
+/* home section css */
 .home {
     display: flex;
     align-items: center;
@@ -102,30 +106,31 @@ header .fa-bars {
     background-position: center;
 }
 
-.home .contant {
+.home .content {
     max-width: 50rem;
 }
 
-.home .contant h3 {
+.home .content h3 {
     font-size: 6rem;
     color: #333;
 
 }
 
-.home .contant span {
+.home .content span {
     font-size: 3.5rem;
-    color: plum;
+    color: var(--pink);
     padding: 1rem 0;
     line-height: 1.5;
 }
 
-.home .contant p {
+.home .content p {
     font-size: 1.5rem;
     color: #999;
     padding: 1rem 0;
     line-height: 1.5;
 }
 
+/* button css */
 .btn {
     display: inline-block;
     margin-top: 1rem;
@@ -138,7 +143,7 @@ header .fa-bars {
 }
 
 .btn:hover {
-    background: #e84393;
+    background: var(--pink);
 }
 
 .heading {
@@ -154,6 +159,7 @@ header .fa-bars {
     color: var(--pink);
 }
 
+/* about section css */
 .about .row {
     display: flex;
     align-items: center;
@@ -189,7 +195,7 @@ header .fa-bars {
     mix-blend-mode: screen;
 }
 
-.about .row .contant {
+.about .row .content {
     flex: 1 1 40rem;
 
 }
@@ -199,7 +205,7 @@ header .fa-bars {
     color: #333;
 }
 
-.about .row .contant p {
+.about .row .content p {
     font-size: 1.5rem;
     color: #999;
     padding: .5rem, 0;
@@ -207,6 +213,7 @@ header .fa-bars {
     line-height: 1.5;
 }
 
+/* icons section css */
 .icons-container {
     background-color: #eee;
     display: flex;
@@ -222,7 +229,7 @@ header .fa-bars {
     padding: 2rem;
     display: flex;
     align-items: center;
-    flex: 1 1 25rem;
+    flex: 1 1 24rem;
 }
 
 .icons-container .icons img {
@@ -241,6 +248,7 @@ header .fa-bars {
     font-size: 1.3rem;
 }
 
+/* products section css */
 .products .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -338,6 +346,7 @@ header .fa-bars {
     text-decoration: line-through;
 }
 
+/* review section css */
 .review .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -346,11 +355,11 @@ header .fa-bars {
 
 .review .box-container .box {
     flex: 1 1 30rem;
-    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    box-shadow: 0 .5rem 1.5rem var(--shadow-color);
     border-radius: .5rem;
     padding: 3rem 2rem;
     position: relative;
-    border: 1rem solid rgba(0, 0, 0, .1);
+    border: 1rem solid var(--shadow-color);
 }
 
 .review .box-container .box .fa-quote-right {
@@ -408,8 +417,8 @@ header .fa-bars {
 .contact .row form {
     flex: 1 1 40rem;
     padding: 2rem 2.5rem;
-    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
-    border: .1rem solid rgba(0, 0, 0, .1);
+    box-shadow: 0 .5rem 1.5rem var(--shadow-color);
+    border: .1rem solid var(--shadow-color);
     background-color: #fff;
     border-radius: .5rem;
 }
@@ -427,7 +436,7 @@ header .fa-bars {
     font-size: 1.7rem;
     color: #333;
     text-transform: none;
-    border: .1rem solid rgba(0, 0, 0, .1);
+    border: .1rem solid var(--shadow-color);
     border-radius: .5rem;
     margin: .7rem 0;
     width: 100%;
@@ -442,6 +451,7 @@ header .fa-bars {
     resize: none;
 }
 
+/* footer section css */
 .footer .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -449,7 +459,7 @@ header .fa-bars {
 }
 
 .footer .box-container .box {
-    flex: 1 1 25rem;
+    flex: 1 1 24rem;
 
 }
 
@@ -472,10 +482,6 @@ header .fa-bars {
     text-decoration: underline;
 }
 
-.footer .box-container .box img {
-    margin-top: 1rem;
-}
-
 .footer .credit {
     text-align: center;
     padding: 1.5rem;
@@ -483,7 +489,7 @@ header .fa-bars {
     padding-top: 2.5rem;
     font-size: 2rem;
     color: #333;
-    border-top: .1rem solid rgba(0, 0, 0, .1);
+    border-top: .1rem solid var(--shadow-color);
 }
 
 .footer .credit span {
